@@ -20,6 +20,18 @@
     )
   )
 
+  (sheet (at 44.45 69.85) (size 21.59 11.43) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
+    (fill (color 0 0 0 0.0000))
+    (uuid e9506136-80e5-4250-83e4-52799f917e83)
+    (property "Sheet name" "RAM" (id 0) (at 44.45 69.1384 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheet file" "ram.kicad_sch" (id 1) (at 44.45 81.8646 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+  )
+
   (sheet (at 44.45 27.94) (size 21.59 13.97) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
@@ -36,6 +48,7 @@
     (path "/" (page "1"))
     (path "/ec5c2062-3a41-4636-8803-069e60a1641a" (page "2"))
     (path "/39367e70-4fd8-4578-b7c9-16f6f15e83e4" (page "3"))
+    (path "/e9506136-80e5-4250-83e4-52799f917e83" (page "4"))
   )
 
   (symbol_instances
