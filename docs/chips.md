@@ -43,7 +43,7 @@
 | D53        | К155КП2    | 74153      | Dual 4-line to 1-line data selectors/multiplexers    |
 | D54        | К155КП2    | 74153      | Dual 4-line to 1-line data selectors/multiplexers    |
 | D55        | К155ИР13   | 74198      | 8-bit shift register                                 |
-| D56        | К155ИД4    | 74151      | 8-line to 1-line data selectors/multiplexer          |
+| D56        | К155ИД4    | 74155      | Dual 2-line to 4-line data selectors/multiplexers    |
 | D58        | УД708      | LM741      | Op-amp                                               |
 | D59        | К155ЛЛ1    | 7432       | Quad 2-input positive-OR gates                       |
 | D60        | К155ЛИ1    | 7408       | Quadruple 2-input AND gates                          |
