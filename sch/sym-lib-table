@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name "intel8080")(type "KiCad")(uri "${KIPRJMOD}/intel8080.kicad_sym")(options "")(descr ""))
+  (lib (name "74xx_ext")(type "KiCad")(uri "${KIPRJMOD}/74xx_ext.kicad_sym")(options "")(descr ""))
 )

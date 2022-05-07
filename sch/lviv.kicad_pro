@@ -332,6 +332,10 @@
     [
       "e9506136-80e5-4250-83e4-52799f917e83",
       "RAM"
+    ],
+    [
+      "036afffe-cbbf-4ead-9c0c-ea4c435dd04c",
+      "video"
     ]
   ],
   "text_variables": {}
