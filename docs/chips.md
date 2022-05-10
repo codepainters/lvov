@@ -15,7 +15,7 @@
 | D18        | К155ЛЛ1    | 7432       | Quad 2-input positive-OR gates                       |
 | D19-D26    | КР565РУ5Д  | 4164       | 8x 64k x 1 DRAM                                      |
 | D27        | КР580ИР82  | i8282      | Octal latch                                          |
-| D28        | К155ИД4    | 74151      | 8-line to 1-line data selectors/multiplexer          |
+| D28        | К155ИД4    | 74155      | Dual 2-line to 4-line decoders/demultiplexers        |
 | D29        | К155ЛА8    | 7401       | Quad 2-input NAND gates with open-collector outputs  |
 | D30        | КР580ВВ55А | i8255      | Programmable peripheral interface                    |
 | D31        | КР580ВА86  | i8286      | Octal bus trasceiver                                 |
@@ -43,7 +43,7 @@
 | D53        | К155КП2    | 74153      | Dual 4-line to 1-line data selectors/multiplexers    |
 | D54        | К155КП2    | 74153      | Dual 4-line to 1-line data selectors/multiplexers    |
 | D55        | К155ИР13   | 74198      | 8-bit shift register                                 |
-| D56        | К155ИД4    | 74155      | |
+| D56        | К155ИД4    | 74155      | Dual 2-line to 4-line decoders/demultiplexers        |
 | D58        | УД708      | LM741      | Op-amp                                               |
 | D59        | К155ЛЛ1    | 7432       | Quad 2-input positive-OR gates                       |
 | D60        | К155ЛИ1    | 7408       | Quadruple 2-input AND gates                          |
