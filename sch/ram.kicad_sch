@@ -5325,7 +5325,7 @@
     (in_bom yes) (on_board yes)
     (uuid ff534714-5450-4ad6-a07c-a8ccad3be11c)
     (property "Reference" "R34" (id 0) (at 243.84 137.16 90))
-    (property "Value" "" (id 1) (at 243.84 142.24 90))
+    (property "Value" "R_Small" (id 1) (at 243.84 142.24 90))
     (property "Footprint" "" (id 2) (at 243.84 139.7 0)
       (effects (font (size 1.27 1.27)) hide)
     )
