@@ -344,6 +344,10 @@
     [
       "b85f8c73-19f2-44f2-9443-5936ad5dc890",
       "timing"
+    ],
+    [
+      "8f40cd30-616e-41e2-bee9-266c3138b0af",
+      "RAM controller"
     ]
   ],
   "text_variables": {}
