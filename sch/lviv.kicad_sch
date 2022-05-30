@@ -68,14 +68,14 @@
     )
   )
 
-  (sheet (at 44.45 69.85) (size 21.59 11.43) (fields_autoplaced)
+  (sheet (at 45.72 102.87) (size 21.59 11.43) (fields_autoplaced)
     (stroke (width 0.1524) (type solid) (color 0 0 0 0))
     (fill (color 0 0 0 0.0000))
     (uuid e9506136-80e5-4250-83e4-52799f917e83)
-    (property "Sheet name" "RAM" (id 0) (at 44.45 69.1384 0)
+    (property "Sheet name" "RAM" (id 0) (at 45.72 102.1584 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheet file" "ram.kicad_sch" (id 1) (at 44.45 81.8646 0)
+    (property "Sheet file" "ram.kicad_sch" (id 1) (at 45.72 114.8846 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
   )
@@ -227,6 +227,9 @@
     (path "/b85f8c73-19f2-44f2-9443-5936ad5dc890/52661638-4300-43a1-b78e-59aca9a6ba72"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
+    (path "/39367e70-4fd8-4578-b7c9-16f6f15e83e4/542b7669-e996-4107-b9de-31591867d2a3"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
     (path "/e9506136-80e5-4250-83e4-52799f917e83/5b4a0958-4431-48ba-8cba-216fe96b76a1"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
@@ -353,9 +356,6 @@
     (path "/39367e70-4fd8-4578-b7c9-16f6f15e83e4/c26a68d2-a29a-4992-8792-62929ff7fbe7"
       (reference "#PWR?") (unit 1) (value "~") (footprint "")
     )
-    (path "/ec5c2062-3a41-4636-8803-069e60a1641a/c4a3435a-68a1-4d1f-937e-dd4fd074efff"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
-    )
     (path "/bc747cd9-2c14-4e8d-af52-0eda425fcd05/c8cfbe4e-05f1-4f17-a10f-e8b6945171a4"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
@@ -458,32 +458,32 @@
     (path "/036afffe-cbbf-4ead-9c0c-ea4c435dd04c/84da540f-b030-4c46-bc64-a6af574ec454"
       (reference "C56") (unit 1) (value "C_Small") (footprint "")
     )
-    (path "/ec5c2062-3a41-4636-8803-069e60a1641a/a42762ae-33b2-425d-aa2c-10445b69f1d9"
+    (path "/39367e70-4fd8-4578-b7c9-16f6f15e83e4/c097debe-e454-4251-b206-03e8af27b926"
       (reference "D1") (unit 1) (value "7410") (footprint "")
     )
-    (path "/ec5c2062-3a41-4636-8803-069e60a1641a/303f88f9-98f1-43d7-bc94-fa291d73b511"
+    (path "/39367e70-4fd8-4578-b7c9-16f6f15e83e4/24985ab4-c2ca-46ee-bd16-3deea12c538b"
       (reference "D1") (unit 2) (value "7410") (footprint "")
     )
     (path "/ec5c2062-3a41-4636-8803-069e60a1641a/caebc74e-3b13-491e-a739-5835ef223ac6"
-      (reference "D2") (unit 1) (value "8286 / КР580ВА86") (footprint "")
+      (reference "D2") (unit 1) (value "8286") (footprint "")
     )
     (path "/ec5c2062-3a41-4636-8803-069e60a1641a/9c6e6373-02e6-4a50-bbfb-f7d763db156a"
-      (reference "D3") (unit 1) (value "8286 / КР580ВА86") (footprint "")
+      (reference "D3") (unit 1) (value "8286") (footprint "")
     )
     (path "/ec5c2062-3a41-4636-8803-069e60a1641a/59b21f1a-4908-44f3-b1d8-8559abe21d1e"
-      (reference "D4") (unit 1) (value "8224 / КР580ГФ24") (footprint "")
+      (reference "D4") (unit 1) (value "8224") (footprint "")
     )
-    (path "/ec5c2062-3a41-4636-8803-069e60a1641a/af49318e-88f4-45de-92e0-89cce36323dd"
+    (path "/39367e70-4fd8-4578-b7c9-16f6f15e83e4/32ac19ea-f738-442b-afd8-52db5695980b"
       (reference "D5") (unit 1) (value "74LS74") (footprint "")
     )
     (path "/ec5c2062-3a41-4636-8803-069e60a1641a/becc5b0d-0352-4ad7-ac5e-da033ca0b239"
-      (reference "D6") (unit 1) (value "8080 / КР580ВМ80") (footprint "")
+      (reference "D6") (unit 1) (value "8080") (footprint "")
     )
-    (path "/ec5c2062-3a41-4636-8803-069e60a1641a/ecb9382e-8212-4cf7-b9a3-cf1f144d2ec8"
+    (path "/39367e70-4fd8-4578-b7c9-16f6f15e83e4/32a9df2f-17cc-4454-b6f1-4c632b199b67"
       (reference "D7") (unit 2) (value "7408") (footprint "")
     )
     (path "/ec5c2062-3a41-4636-8803-069e60a1641a/71507327-aca7-400b-91af-35ed0f809b8f"
-      (reference "D8") (unit 1) (value "8228 / КР580ВК28") (footprint "")
+      (reference "D8") (unit 1) (value "8228") (footprint "")
     )
     (path "/39367e70-4fd8-4578-b7c9-16f6f15e83e4/448c97d9-acbf-4cb6-b6cc-530549ead6d1"
       (reference "D9") (unit 1) (value "74LS138") (footprint "")

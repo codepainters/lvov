@@ -2819,11 +2819,11 @@
     (uuid e00c1219-4884-43d9-97e0-3262a1e6323c)
   )
 
-  (hierarchical_label "t_rst2" (shape output) (at 334.645 187.325 0)
+  (hierarchical_label "T_RST2" (shape output) (at 334.645 187.325 0)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 415c0438-c47c-4f0a-bf93-20312943b54b)
   )
-  (hierarchical_label "t_rst1" (shape output) (at 334.645 79.375 0)
+  (hierarchical_label "T_RST1" (shape output) (at 334.645 79.375 0)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 4641bd03-bdbd-4fb2-b638-5de9c68c7ae9)
   )
