@@ -4170,7 +4170,7 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 20732011-072a-43de-8ba8-9e881234e28e)
   )
-  (hierarchical_label "0_ROMSEL" (shape input) (at 326.39 93.98 180)
+  (hierarchical_label "ROM_OE" (shape input) (at 326.39 93.98 180)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 30a8fc9e-a44c-41e9-afe5-671e45b42072)
   )
