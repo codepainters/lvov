@@ -72,6 +72,17 @@ Pin 1 is bottom left, 2 is top left (as seen from the outside).
 | 2    | GND               |
 | 3    | Input (from tape) |
 
+## X4 - power supply
+
+| Pin  | Signal |
+| ---- | ------ |
+| 1    | +12V   |
+| 2    | +5V    |
+| 3    | GND    |
+| 4    | -5V    |
+| 5    | GND    |
+
+
 ## X5 - video output
 
 | Pin  | Signal            |
@@ -83,3 +94,25 @@ Pin 1 is bottom left, 2 is top left (as seen from the outside).
 | 5    | R                 |
 | 6    | GND               |
 
+## Keyboard
+
+Keyboard is connected using wires soldered to numbered pads. Unfortunately, numbers do not match.
+
+| Signal | Mainboard pad | Keyboard PCB pad |
+| ------ | ------------- | ---------------- |
+| D0     | 8             | 34               |
+| D1     | 7             | 33               |
+| D2     | 6             | 32               |
+| D3     | 5             | 31               |
+| D4     | 4             | 30               |
+| D5     | 3             | 29               |
+| D6     | 2             | 28               |
+| D7     | 1             | 27               |
+| A0     | 11            | 9                |
+| A1     | 12            | 8                |
+| ~I/OR  | 14            | 5                |
+| ~I/OW  | 15            | 36               |
+| RESET  | 13            | 35               |
+| ~CS1   | 9             | 6                |
+| ~RESIN | 10            | 10               |
+| BUZZER | 16            | 16               |
