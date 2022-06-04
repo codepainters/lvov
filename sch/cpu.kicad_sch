@@ -2786,7 +2786,7 @@
     (in_bom yes) (on_board yes)
     (uuid 077de74b-17bd-4819-ab12-a3d892cfac38)
     (property "Reference" "R10" (id 0) (at 38.735 102.235 90))
-    (property "Value" "" (id 1) (at 43.18 102.235 90))
+    (property "Value" "1k" (id 1) (at 43.18 102.235 90))
     (property "Footprint" "" (id 2) (at 40.005 99.695 0)
       (effects (font (size 1.27 1.27)) hide)
     )
