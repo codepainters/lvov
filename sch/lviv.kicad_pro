@@ -348,6 +348,10 @@
     [
       "8f40cd30-616e-41e2-bee9-266c3138b0af",
       "RAM controller"
+    ],
+    [
+      "faa47df8-079a-4cf0-9532-c75cf51ad6aa",
+      "connectors"
     ]
   ],
   "text_variables": {}

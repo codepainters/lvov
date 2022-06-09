@@ -4558,7 +4558,7 @@
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 8389c07d-dbfc-43c7-9d55-e316aae59eab)
   )
-  (hierarchical_label "D[0..7]" (shape input) (at 269.24 134.62 0)
+  (hierarchical_label "D[0..7]" (shape output) (at 269.24 134.62 0)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid c2fe5598-e59f-4001-ac4f-e9c7eeb34808)
   )
