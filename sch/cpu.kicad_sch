@@ -3097,7 +3097,7 @@
     (property "Reference" "D5" (id 0) (at 55.245 72.39 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "74LS74" (id 1) (at 61.595 72.39 0)
+    (property "Value" "7474" (id 1) (at 61.595 72.39 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (id 2) (at 48.26 86.995 0)
