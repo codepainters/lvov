@@ -1570,10 +1570,13 @@
       (reference "C57") (unit 1) (value "200pF") (footprint "")
     )
     (path "/39367e70-4fd8-4578-b7c9-16f6f15e83e4/c097debe-e454-4251-b206-03e8af27b926"
-      (reference "D1") (unit 1) (value "7410") (footprint "")
+      (reference "D1") (unit 1) (value "74LS10") (footprint "")
     )
     (path "/39367e70-4fd8-4578-b7c9-16f6f15e83e4/24985ab4-c2ca-46ee-bd16-3deea12c538b"
-      (reference "D1") (unit 2) (value "7410") (footprint "")
+      (reference "D1") (unit 2) (value "74LS10") (footprint "")
+    )
+    (path "/8f40cd30-616e-41e2-bee9-266c3138b0af/05b0893f-99ec-46b7-9a2a-7ad74435af35"
+      (reference "D1") (unit 3) (value "74LS10") (footprint "")
     )
     (path "/ec5c2062-3a41-4636-8803-069e60a1641a/caebc74e-3b13-491e-a739-5835ef223ac6"
       (reference "D2") (unit 1) (value "8286") (footprint "")
@@ -1862,9 +1865,6 @@
     )
     (path "/036afffe-cbbf-4ead-9c0c-ea4c435dd04c/eed9290e-cdf6-4048-be3f-fef58fd3df7a"
       (reference "D62") (unit 4) (value "7432") (footprint "")
-    )
-    (path "/8f40cd30-616e-41e2-bee9-266c3138b0af/05b0893f-99ec-46b7-9a2a-7ad74435af35"
-      (reference "D?") (unit 3) (value "74LS10") (footprint "")
     )
     (path "/ec5c2062-3a41-4636-8803-069e60a1641a/13f7a552-a646-40e6-b51b-e08ee801d2ce"
       (reference "R1") (unit 1) (value "2k7") (footprint "")
@@ -2167,7 +2167,7 @@
       (reference "X4") (unit 1) (value "PSU") (footprint "")
     )
     (path "/036afffe-cbbf-4ead-9c0c-ea4c435dd04c/f83a2a11-b450-477b-82d7-ae954f65ad97"
-      (reference "X5") (unit 1) (value "DIN-7") (footprint "")
+      (reference "X5") (unit 1) (value "Video") (footprint "")
     )
     (path "/faa47df8-079a-4cf0-9532-c75cf51ad6aa/c56c7a78-83f5-4b33-b859-d1288b2eaecf"
       (reference "pin1") (unit 1) (value "Conn_01x01") (footprint "")

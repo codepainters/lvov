@@ -4380,7 +4380,7 @@
     (in_bom yes) (on_board yes)
     (uuid a6ca6398-2621-4c2f-a59f-948410c51b6a)
     (property "Reference" "R96" (id 0) (at 245.11 93.98 90))
-    (property "Value" "" (id 1) (at 249.555 93.98 90))
+    (property "Value" "6k2" (id 1) (at 249.555 93.98 90))
     (property "Footprint" "" (id 2) (at 233.68 93.98 0)
       (effects (font (size 1.27 1.27)) hide)
     )
