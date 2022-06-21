@@ -1,7 +1,7 @@
 OBJS=01_hello_pio.rom
 
 %.rom : %.asm
-	zasm -wu $<
+	zasm -wu --8080 $<
 
 all: $(OBJS)
 
