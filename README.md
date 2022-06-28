@@ -11,7 +11,7 @@ Judge yourself:
 Inside this repository:
 
 * [original](orig) documentation collected from the Internet
-* mainboard [schematics](sch)  redrawn into (hopefully) more readable form (KiCAD project + PDFs)
+* mainboard [schematics](sch)  redrawn into (hopefully) more readable form (KiCAD project + [PDFs](sch/pdfs))
 * some [datasheets](datasheets) of the chips used
 * [ROM](roms) files, both from the Internet, as well as dumped from the desoldered EPROMs
 * various notes and [docs](docs), including my design analysis  (look there for details)
