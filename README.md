@@ -1,3 +1,18 @@
-# ПК-01 Львів
+# ПК-01 Львoв
 
-This repo contains all the documentation and notes about ПК-01 Львів personal computer, that I'm trying to repair. 
+This repo contains all the documentation and notes about ПК-01 Львoв personal computer - probably the ugliest computer I've ever attempted to repair :)
+
+Judge yourself:
+
+![](img/view.jpg)
+
+
+
+Inside this repository:
+
+* [original](orig) documentation collected from the Internet
+* mainboard [schematics](sch)  redrawn into (hopefully) more readable form (KiCAD project + PDFs)
+* some [datasheets](datasheets) of chips used
+* [ROM](rom) files, both from Internet, as well as dumped from desoldered EPROMs
+* various notes and [docs](docs), including my design analysis  (look there for details)
+
