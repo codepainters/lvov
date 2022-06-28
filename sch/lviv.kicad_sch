@@ -1224,6 +1224,9 @@
     (path "/e9506136-80e5-4250-83e4-52799f917e83/4d456690-b0e0-4aba-999a-ace6ab01f4d1"
       (reference "#PWR?") (unit 1) (value "+5V") (footprint "")
     )
+    (path "/ec5c2062-3a41-4636-8803-069e60a1641a/4dd61065-b0db-43d9-ae13-f5f1fc5398ac"
+      (reference "#PWR?") (unit 1) (value "+12V") (footprint "")
+    )
     (path "/bc747cd9-2c14-4e8d-af52-0eda425fcd05/4e67e9f1-95ee-42b5-8432-37d18e670075"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
