@@ -34,8 +34,36 @@ PIO block is a regular 8255 chip application.
   * `~CS0` (addresses `0xC0..CF`) selects `D30` PIO chip
   * `~CS1` (addresses `0xD0..DF`) selects second `8255` chip on the keyboard PCB
   * `~CS2` (addresses `0xE0..EF`) and `~CS3` (addresses `0xF0..FF`) signals are routed to `X1` connector (not used otherwise). 
+  
 * a little trick is used in the address decoder:
   * `~ROM_OE` goes low when `A15` and `A14` lines are high
+  
   * however, during I/O cycles, 8080 CPU outputs 8-bit I/O address on both lower and higher byte of the address buss
+  
   * it's therefore equivalent to decoding `A7` and `A6` lines, without any extra gates - neat! 
+  
+    
 
+PIO lines are used as follows:
+
+* Port A: `PA[7..0]` lines are routed to `X2` connector via `D31` buffer (`8286`), outputs only
+
+* Port B:
+
+  * `PB[7..0]` signals are routed directly to `X2`
+  *  `PB[6..0]` also controls video color palette
+  * `PB7` controls a speaker
+
+* Port C:
+
+  * `~PC0` is an output to a tape recorder
+
+  * `~PC1` is used to alter RAM address mapping (see memory block description)
+
+  * `PC4` is tape recorder input
+
+  * `~PC2`, `~PC3`, `PC5`, `PC6`, `PC7` are routed to `X2` connector
+
+    
+
+  
