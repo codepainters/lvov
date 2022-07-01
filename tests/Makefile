@@ -1,4 +1,4 @@
-OBJS=01_hello_pio.rom
+OBJS=01_hello_pio.rom 02_dump_roms.rom
 
 %.rom : %.asm
 	zasm -wu --8080 $<
