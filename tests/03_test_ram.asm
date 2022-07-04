@@ -1,5 +1,14 @@
-; 
-; Dump ROM area via PIO. 
+;
+; Test RAM memory.
+;
+; The code writes whole RAM with pseudorandom pattern,
+; then dump it back via PIO.
+;
+; Note: when PC1 is set to 1, RAM is mapped in the CPU address space 
+;   "as is", which means that address space chunk 0xC000..0xFFFF 
+;   (last 16kB) is shadowed by ROM. 
+;   If PC1 is set to 0, A15 is always set to 1, thus RAM area 
+;   0x8000..0xFFFF is available starting at 0x0000.
 ;
 
 .org    0xC000
@@ -12,7 +21,10 @@ l1: NOP
     OUT     (0xC3), A
     LD      A, 0x00
     OUT     (0xC1), A
-    
+
+    ; disable RAM mapping
+    LD      A, 0x02
+    OUT     (0xC2), A
 
     ; feel first half of RAM with pattern
     LD      HL, 0x0000
@@ -24,19 +36,21 @@ feel1:
     DEC     BC
     JP      NZ, feel1
 
-    ; switch memory mapping, so second half of RAM is 
+    ; switch memory mapping, so second half of RAM is
     ; mapped from address 0
-    ; TODO
+    LD      A, 0x00
+    OUT     (0xC2), A
 
-    ; feel second half of RAM 
+    ; feel second half of RAM
     ; TODO
 
     ; switch memory mapping back, so first half of RAM
     ; is available
-    ; TODO
+    LD      A, 0x02
+    OUT     (0xC2), A
 
     ; dump first half of RAM
-    LD      HL, 0x0000 
+    LD      HL, 0x0000
     LD      BC, 0x8000
 dump_l1:
     LD      A, (HL)
@@ -48,17 +62,18 @@ dump_l1:
     LD      A, 0x00
     OUT     (0xC1), A
     NOP
-    NOP   
- 
+    NOP
+
     INC     HL
-    DEC     BC                    
+    DEC     BC               
     JP      NZ, dump_l1
 
     ; switch mapping
-    ; TODO
+    LD      A, 0x00
+    OUT     (0xC2), A
 
     ; dump first half of RAM
-    LD      HL, 0x0000 
+    LD      HL, 0x0000
     LD      BC, 0x8000
 dump_l2:
     LD      A, (HL)
@@ -70,10 +85,10 @@ dump_l2:
     LD      A, 0x00
     OUT     (0xC1), A
     NOP
-    NOP   
- 
+    NOP
+
     INC     HL
-    DEC     BC                    
+    DEC     BC               
     JP      NZ, dump_l2
 
     ; endless loop when done
