@@ -26,22 +26,53 @@ l1: NOP
     LD      A, 0x02
     OUT     (0xC2), A
 
-    ; feel first half of RAM with pattern
-    LD      HL, 0x0000
-    LD      BC, 0x8000
-    LD      DE, 0xFFFF
-feel1:
-    ; TODO
-    INC     HL
-    DEC     BC
-    JP      NZ, feel1
+    ; fill first half of RAM with pattern
+    LD      HL, 0x0000  ; target address
+    LD      DE, 0xFFFF  ; LFSR
+fill1:
+    LD      BC, tab
+
+    ; BC += E twice, so BC points to lower byte of tab[E]
+    LD      A, E
+    ADD     C
+    LD      C, A
+    LD      A, B
+    ADC     0
+    LD      B, A
+    
+    LD      A, E
+    ADD     C
+    LD      C, A
+    LD      A, B
+    ADC     0
+    LD      B, A
+    
+    ; A = tab[E] ^ D
+    LD      A, (BC) ; A = lower byte from tab
+    XOR     D
+    LD      (HL), A ; it becomes first output byte
+    INC     HL      ;
+    LD      E, A    ; ..and new lower byte of the LFSR
+
+    INC     BC      ; next byte...
+    LD      A, (BC) ; .. from the table ..
+    LD      (HL), A ; .. is next output byte
+    INC     HL      ; .. and also ..
+    LD      D, A    ; .. becomes new higher byte of the LFSR.
+
+    LD      A, H
+    CP      0x80
+    JP      NZ, fill1
+    LD      A, L
+    CP      0x00
+    JP      NZ, fill1
 
     ; switch memory mapping, so second half of RAM is
     ; mapped from address 0
     LD      A, 0x00
     OUT     (0xC2), A
 
-    ; feel second half of RAM
+    ; fill second half of RAM
     ; TODO
 
     ; switch memory mapping back, so first half of RAM
