@@ -94,3 +94,7 @@ dump_l2:
     ; endless loop when done
 done:
     JP      done
+
+
+tab:
+    incbin "gen/crc_table"

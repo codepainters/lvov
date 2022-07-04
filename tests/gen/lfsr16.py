@@ -32,11 +32,14 @@ TAB = (0x0000, 0xc0c1, 0xc181, 0x0140, 0xc301, 0x03c0, 0x0280, 0xc241,
     0x8201, 0x42c0, 0x4380, 0x8341, 0x4100, 0x81c1, 0x8081, 0x4040)
 
 
-with open('pattern.bin', 'wb') as f:
+with open('crc_table', 'wb') as f:
+    for i in TAB:
+        f.write(i.to_bytes(2,'little'))
+
+with open('pattern', 'wb') as f:
     reg = 0xFFFF
     for _ in range(32768):
         idx = reg & 0xFF 
         reg = TAB[idx] ^ (reg >> 8)
-        # big endian
-        print(reg)
-        f.write(reg.to_bytes(2,'big'))
+        # little endian
+        f.write(reg.to_bytes(2,'little'))
