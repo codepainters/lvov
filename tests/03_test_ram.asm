@@ -73,7 +73,44 @@ fill1:
     OUT     (0xC2), A
 
     ; fill second half of RAM
-    ; TODO
+    LD      HL, 0x0000  ; target address
+fill2:
+    LD      BC, tab
+
+    ; BC += E twice, so BC points to lower byte of tab[E]
+    LD      A, E
+    ADD     C
+    LD      C, A
+    LD      A, B
+    ADC     0
+    LD      B, A
+    
+    LD      A, E
+    ADD     C
+    LD      C, A
+    LD      A, B
+    ADC     0
+    LD      B, A
+    
+    ; A = tab[E] ^ D
+    LD      A, (BC) ; A = lower byte from tab
+    XOR     D
+    LD      (HL), A ; it becomes first output byte
+    INC     HL      ;
+    LD      E, A    ; ..and new lower byte of the LFSR
+
+    INC     BC      ; next byte...
+    LD      A, (BC) ; .. from the table ..
+    LD      (HL), A ; .. is next output byte
+    INC     HL      ; .. and also ..
+    LD      D, A    ; .. becomes new higher byte of the LFSR.
+
+    LD      A, H
+    CP      0x80
+    JP      NZ, fill2
+    LD      A, L
+    CP      0x00
+    JP      NZ, fill2
 
     ; switch memory mapping back, so first half of RAM
     ; is available
