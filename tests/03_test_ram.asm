@@ -134,7 +134,13 @@ dump_l1:
 
     INC     HL
     DEC     BC               
+    LD      A, B
+    CP      0x00
     JP      NZ, dump_l1
+    LD      A, C
+    CP      0x00
+    JP      NZ, dump_l1
+
 
     ; switch mapping
     LD      A, 0x00
@@ -157,6 +163,11 @@ dump_l2:
 
     INC     HL
     DEC     BC               
+    LD      A, B
+    CP      0x00
+    JP      NZ, dump_l2
+    LD      A, C
+    CP      0x00
     JP      NZ, dump_l2
 
     ; endless loop when done
