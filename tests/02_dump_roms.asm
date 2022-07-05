@@ -28,8 +28,14 @@ loop:
     NOP
     NOP   
  
-    INC     HL              
-    JP      NZ, loop        ; repeat until wraps around 
+    INC     HL             ; INC HL (INX H) doesn't update flags!
+
+    LD      A, H
+    CP      0x00
+    JP      NZ, loop
+    LD      A, L
+    CP      0x00
+    JP      NZ, loop
 
     ; endless loop when done
 done:
