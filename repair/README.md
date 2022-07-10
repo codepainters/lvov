@@ -30,7 +30,7 @@ Below is my (informal) repair logbook.
 
 
 
-#### 3. STSTB - first fault
+#### 3. STSTB - fault #1 
 
 * I've checked `~MEMR`, `~MEMW`, etc. signals. It looked like the CPU is alive, but one signal looked invalid - `STSTB` (yellow trace):
 
@@ -46,7 +46,17 @@ Below is my (informal) repair logbook.
 
 
 
+* believe it or not, the problem is inside the red circle :)
+
+  ![](img/ststb_short.jpg)
+
+
+
+
+
 
 
 #### 4. Timing block
 
+* timing counters - all outputs OK
+* 
