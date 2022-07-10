@@ -5,7 +5,7 @@ Basic docs:
 * [list of chips](chips.md) with both Russian and equivalent western symbols
 * [map of the board](pcb_map.pdf) , also in [SVG](pcb_map.svg)
 * [connectors pinout](connectors.md)
-
+* [SCART cable](scart.md)
 
 
 Below are my block-by-block analysis of the hardware:
