@@ -1,6 +1,6 @@
 # ПК-01 Львoв
 
-This repo contains all the documentation and notes about ПК-01 Львoв personal computer - probably the ugliest computer I've ever attempted to repair :)
+This repository contains all the documentation and notes about ПК-01 Львoв personal computer - probably the ugliest computer I've ever ~~attempted to repair~~ repaired :)
 
 Judge yourself:
 
