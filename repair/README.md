@@ -94,3 +94,16 @@ Below is my (informal) repair logbook.
 
 
 
+#### 5. RAM controller - fault #2
+
+* given that timing counters are working fine, there should be proper RAM cycles generated (`RAS`, `CAS`, address mux control signals, etc.)
+
+  * nope..
+
+* narrowed to a broken `D49` (`74138`) chip (3 bits to 1-of-8 decoder)
+
+* after replacing `D49` it appeared to work, but I've decided to leave it as is and move on to other blocks, assuming I will get back to RAM later
+
+  * spoiler: all was fine in this block
+
+  
