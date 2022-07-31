@@ -249,5 +249,16 @@ That's how we get to...
 
 
 
+## Summary
+
 At this point I decided to put back original EPROM - and Basic prompt appeared! Mission accomplished.
 
+To summarize the faults:
+
+* one short on the PCB (`STSTB` and clock signal)
+
+* 2 broken `74138` chips (one in RAM timing block, one in EPROM chip selection circuitry) 
+
+* one broken EPROM
+
+  
