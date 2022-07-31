@@ -16,3 +16,7 @@ Inside this repository:
 * [ROM](roms) files, both from the Internet, as well as dumped from the desoldered EPROMs
 * various notes and [docs](docs), including my design analysis  (look there for details)
 
+And, lust but not least, my [repair log](repair).
+
+Enjoy!
+
