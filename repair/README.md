@@ -152,15 +152,25 @@ Below is my (informal) repair logbook.
 
 
 
+#### 7. EPROMs address decoder - fault #3
+
+* at that point I decided to look closely at the CPU activity - to see if it is actually executing any code at all (with assumption that most likely it does, as I've seen memory and I/O reads/writes before, when poking around for other things).
+
+* what I saw at `D0` line was sort of surprise:
+
+  ![](img/D0_all_roms_at_once.png)
+
+  It doesn't even look like a digital signal at all. The root cause was `D9` 1-of-8 decoder (`74138`), which generates *Chip Enable* signals selecting 1 of 8 EPROMs, depending on the values of the `A11..A13`address lines. This chip was broken with all outputs low - effectively all EPROMs were **driving the data bus at the same time**. What you see above are the EPROMs fighting :) Replacing the chip solved it.
+
+
+
 ## Software tests
 
-At that point I had no more ideas about simple tests I could perform, so I decided to do the following:
+As I had no more ideas about simple tests I could perform, so I decided to do the following:
 
 * extract all RAM from its sockets
 * replace first EPROM with my own test code (unfortunately, only the first EPROM was socketed)
 * try to run some absolute minimum code to see if the CPU is actually alive and sane
-
-
 
 Note:
 
@@ -171,14 +181,73 @@ Note:
 
 That's how we get to...
 
-#### Test #1: output 0xAA / 0x55 pattern via 82C55 port A
+#### Test #1: output 0xAA / 0x55 pattern via 8255 port A
 
-* source code: [01_hello_pio.asm](../tests/01_hello_pio.asm)
+* this test basically outputs `55/AA` pattern on the on-bard 8255 port A, which is easily accessible via `X2` connector. 
 
-* remember: no RAM, so no variables, no stack (and thus no jump-to-subroutine)
+  * source code: [01_hello_pio.asm](../tests/01_hello_pio.asm)
+
+  * remember: no RAM, so no variables, no stack (and thus no jump-to-subroutine)
+
+
 * I've poked around with my logic analyzer (16 channel) - address bus, data bus, `MEMR`, etc.
 
-* to my surprise,  there were perfectly repeatable EPROM read errors - occasional flips od `D0` from `0` to `1`
+* to my surprise,  there were perfectly repeatable EPROM read errors - occasional flips od `D0` from `0` to `1`, leading to wrong code executing 
 
-  
+* on the diagram below, yellow trace is `MEMR`, blue one is `D0` - as you can see at the rising edge of the 3rd read, `D0` slowly goes from 0 to 1, while it should remain 0 for the `MEMR` pulse duration.
+
+  ![](img/MEMR_D0_wrong_read_.png)
+
+  * I've decided to eliminate potential `D0` drivers, by cutting `D0` trace / wire leading to both `8255` chips - no change
+
+  * at that point I suspected `D8` (`8228`) being broken (spoiler: I was wrong here)
+
+  * I've decided to desolder all the EPROMs (I suspected a borken EPROM can mess with `D0`), but **nothing changed**, which was sort of puzzling 
+
+  * I've replaced my test EPROM with another one and... everything worked! Which leads to **epic fail story**:
+
+    * my EPROM, Nec `μPD2732`, was OK, but not programmed properly - it requires much longer `Vpp` pulse (`50ms`), than the default I used
+    * **lesson #1:** even if verification done right after programming passes OK, it doesn't mean that the EPROM will behave as expected in real application!
+    * **lesson #2**: always check your EPROM's datasheet
+
+  * after re-programming the test worked as expected! 
+
+    * so we have **working CPU** and **ability to output bytes to outside world** - that's a great milestone
+
+    
+
+#### Test 2: dump EPROM contents via 8255 port A - fault #4
+
+* this test basically outputs all the EPROM address space via port A, using `PB2` as strobe signal
+  * source code: [02_dump_roms.asm](../tests/02_dump_roms.asm)
+
+* the data can the be grabbed with logic analyzer and compared with expectations (of course one of 8 EPROMs is replaced with my own test code)
+  * I've used [DSLogic](https://sigrok.org/wiki/DreamSourceLab_DSLogic) + [PulseView](https://sigrok.org/wiki/PulseView) + [parallel decoder](https://sigrok.org/wiki/Protocol_decoder:Parallel) to grab the data
+* so, after soldering the sockets and putting the EPROMs back, I've detected one broken chip, confirmed with EPROM programmer
+
+
+
+#### Test 3: test RAM memory
+
+* everything before was done without using RAM - no variables, no call stack
+* how can we test RAM without using any variables, relying on CPU registers only?
+  * [Linear-feedback shift register](https://en.wikipedia.org/wiki/Linear-feedback_shift_register) to the rescue
+  * we can easily implement table-driven LFSR using only registers and 512-bytes const table
+  * we can then fill all 64kB of RAM with LFSR-generated pseud-random sequence, then dump it via port A (as in case of EPROM tests), and compare with the same sequence generated on the PC (it is pseudo-random - which means it's perfectly deterministic, the same every time you run the LFSR generator).
+  * table was generated using [pycrc](https://pycrc.org/)
+  * [03_test_ram.asm](../tests/03_test_ram.asm) is the code fills all the RAM using LFSR, and dumps it back via port A
+  * the [lfsr16.py](../test/gen/lfsr16.py) script generates reference [pattern](../test/gen/pattern) to compare against 
+* data grabbed via logic analyzer + sigrok compared perfectly! RAM is fine!
+
+
+
+#### Test 4: video output
+
+* CPU, ROM and RAM OK - why not try to display something?
+* [04_video.asm](../tests/04_video.asm) displays simple slanted bars, with all 4 colors repeating 
+* it passed!
+
+
+
+At this point I decided to put back original EPROM - and Basic prompt appeared! Mission accomplished.
 
